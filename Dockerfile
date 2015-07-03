@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y libatlas-base-dev \
 	python3-jinja2 \
 	python3-sqlalchemy \
 	python3-psycopg2 \
-	python3-pip \
+	python3-pip
 	
 # Install python packages using pip3
 RUN pip3 install --upgrade pip
