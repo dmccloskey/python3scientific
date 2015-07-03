@@ -6,7 +6,7 @@ FROM ubuntu:latest
 
 # Add python and r_base to the base image
 FROM python:latest
-FROM dmccloskey/r_base:latest
+FROM dmccloskey/r-base:latest
 
 # Install lapack and blas
 # Install python packages
