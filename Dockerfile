@@ -12,7 +12,7 @@ FROM dmccloskey/r-base:latest
 # Install python packages
 RUN apt-get update && apt-get upgrade -y && apt-get install -y libatlas-base-dev \
 	gfortran \
-	install python3-dev \
+	python3-dev \
 	python3-distlib \
 	python3-html5lib \
 	python3-urllib3 \
