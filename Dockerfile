@@ -44,7 +44,7 @@ RUN pip3 install --no-cache-dir scikit-bio
 RUN pip3 install --no-cache-dir scikit-image
 RUN pip3 install --no-cache-dir scikit-learn
 RUN pip3 install --no-cache-dir pysam
-RUN pip3 install --no-cache-dir htseq
+#RUN pip3 install --no-cache-dir htseq #not yet supported on python3
 RUN pip3 install --upgrade
 
 # Cleanup
