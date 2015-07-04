@@ -49,3 +49,14 @@ RUN pip3 install --upgrade
 
 # Cleanup
 RUN apt-get clean
+
+# create a python user
+ENV HOME /home/user
+RUN useradd --create-home --home-dir $HOME user \
+    && chown -R user:user $HOME
+
+WORKDIR $HOME
+USER user
+
+# set the command
+CMD ["python3"]
