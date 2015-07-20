@@ -52,11 +52,11 @@ RUN apt-get clean
 
 # create a python user
 ENV HOME /home/user
-RUN useradd --create-home --home-dir $HOME user \
-    && chown -R user:user $HOME
+#RUN useradd --create-home --home-dir $HOME user \
+#    && chown -R user:user $HOME
 
 WORKDIR $HOME
-USER user
+#USER user
 
 # set the command
 CMD ["python3"]
