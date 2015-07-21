@@ -8,6 +8,7 @@ FROM ubuntu:latest
 FROM python:latest
 FROM dmccloskey/r-base:latest
 
+# switch to root for install
 USER root
 
 # Install lapack and blas
@@ -60,11 +61,12 @@ RUN pip3 install --upgrade
 RUN apt-get clean
 
 # create a python user
-ENV HOME /home/user
-RUN useradd --create-home --home-dir $HOME user \
-    && chmod -R u+rwx $HOME \
-    && chown -R user:user $HOME
+#ENV HOME /home/user
+#RUN useradd --create-home --home-dir $HOME user \
+#    && chmod -R u+rwx $HOME \
+#    && chown -R user:user $HOME
 
+# switch back to user
 WORKDIR $HOME
 USER user
 
