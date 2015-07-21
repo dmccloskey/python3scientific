@@ -19,6 +19,7 @@ RUN apt-get update && apt-get upgrade -y \
 	libfreetype6 \
 	libpng12-dev \
 	libagg-dev \
+	pkg-config \
 	gfortran \
 	python3-dev \
 	python3-distlib \
