@@ -8,6 +8,8 @@ FROM ubuntu:latest
 FROM python:latest
 FROM dmccloskey/r-base:latest
 
+USER root
+
 # Install lapack and blas
 # Install python packages
 RUN apt-get update && apt-get upgrade -y \
