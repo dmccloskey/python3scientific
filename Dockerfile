@@ -49,7 +49,7 @@ RUN pip3 install --no-cache-dir pykg-config
 RUN pip3 install --no-cache-dir pyzmq
 RUN pip3 install --no-cache-dir pytz
 RUN pip3 install --no-cache-dir rpy2
-RUN pip3 install --no-cache-dir scikit-bio
+#RUN pip3 install --no-cache-dir scikit-bio
 RUN pip3 install --no-cache-dir scikit-image
 RUN pip3 install --no-cache-dir scikit-learn
 RUN pip3 install --no-cache-dir pysam
