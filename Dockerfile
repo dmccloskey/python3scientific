@@ -10,7 +10,9 @@ FROM dmccloskey/r-base:latest
 
 # Install lapack and blas
 # Install python packages
-RUN apt-get update && apt-get upgrade -y && apt-get install -y libatlas-base-dev \
+RUN apt-get update && apt-get upgrade -y \
+	&& apt-get build-dep -y python3-matplotlib \
+	&& apt-get install -y libatlas-base-dev \
 	gfortran \
 	python3-dev \
 	python3-distlib \
