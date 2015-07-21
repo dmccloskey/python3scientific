@@ -16,7 +16,7 @@ RUN apt-get update && apt-get upgrade -y \
 	#&& apt-get build-dep -y python3-matplotlib \
 	&& apt-get install -y libatlas-base-dev \
 	libjpeg8-dev \
-	libfreetype6-dev \
+	libfreetype6 \
 	libpng12-dev \
 	libagg-dev \
 	gfortran \
