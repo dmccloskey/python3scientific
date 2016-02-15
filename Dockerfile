@@ -1,11 +1,7 @@
 # Dockerfile to build python3 images for scientific computing
 # Based on Ubuntu
 
-# Set the base image to Ubuntu
-FROM ubuntu:latest
-
-# Add python and r_base to the base image
-FROM python:latest
+# Set r_base to the base image
 FROM dmccloskey/r-base:latest
 
 # switch to root for install
