@@ -1,5 +1,4 @@
 # Dockerfile to build python3 images for scientific computing
-# Based on Ubuntu
 
 # Set r_base to the base image
 FROM dmccloskey/r-base:latest
