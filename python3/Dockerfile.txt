@@ -68,81 +68,8 @@ RUN cd /usr/local/bin \
 	&& ln -s python3 python \
 	&& ln -s python-config3 python-config
 
-# Install lapack and blas
-# Install python packages
-RUN apt-get update && apt-get upgrade -y \
-	&& apt-get install -y \
-	libatlas-base-dev \
-	#libjpeg62-dev \
-	libfreetype6 \
-	libpng12-dev \
-	libagg-dev \
-	pkg-config \
-	gfortran \
-	\
-	libopenblas-dev \
-	liblapack-dev \
-	libzmq-dev \	
-	\
-	libreadline-gplv2-dev \
-	libncursesw5-dev \
-	libssl-dev \
-	libsqlite3-dev \
-	tk-dev \
-	libgdbm-dev \
-	libc6-dev \
-	libbz2-dev \
-	libhdf5-dev \
-	--no-install-recommends \
-	&& rm -rf /var/lib/apt/lists/*
-	
-# Install python packages using pip3
-# setuptools, numpy and scipy must be installed prior to other installations
-#RUN pip3 install --upgrade pip \ #comment out to update pip3 to the newest version
-RUN pip3 install --no-cache-dir \
-		#distlib \ #generates an error
-		setuptools \
-		numpy \
-		scipy \
-	&&pip3 install --upgrade
-
-# Install python packages using pip3
-RUN pip3 install --no-cache-dir \
-		html5lib \
-		urllib3 \
-		matplotlib \
-		ipython \
-		notebook \
-		pandas \
-		sympy \
-		nose \
-		h5py \
-		biopython \
-		six \
-		tornado \
-		jinja2 \
-		sqlalchemy \
-		#psycopg2 \ #requires postgres
-		distlib \
-		pykg-config \
-		pyzmq \
-		pytz \
-		rpy2 \
-		#scikit-bio \
-		scikit-image \
-		scikit-learn \
-		pysam \
-		#htseq  \#not yet supported on python3
-	&&pip3 install --upgrade
-
 # Cleanup
 RUN apt-get clean
-
-# create a python user
-#ENV HOME /home/user
-#RUN useradd --create-home --home-dir $HOME user \
-#    && chmod -R u+rwx $HOME \
-#    && chown -R user:user $HOME
 
 # switch back to user
 WORKDIR $HOME
