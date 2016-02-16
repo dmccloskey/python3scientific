@@ -11,7 +11,7 @@ USER root
 
 # Installation of debian-deps:latest #[and curl from debian-curl:latest]
 # procps is very common in build systems, and is a reasonably small package
-RUN apt-get update && apt-get upgrade \
+RUN apt-get update && apt-get upgrade -y \
 	&& apt-get install -y --no-install-recommends \
 		curl \
 		bzr \
