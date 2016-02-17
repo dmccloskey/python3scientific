@@ -93,6 +93,7 @@ RUN apt-get update && apt-get upgrade -y \
 	libc6-dev \
 	libbz2-dev \
 	libhdf5-dev \
+	libpq-dev \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 	
@@ -122,7 +123,7 @@ RUN pip3 install --no-cache-dir \
 		tornado \
 		jinja2 \
 		sqlalchemy \
-		#psycopg2 \ #requires postgres
+		psycopg2 \
 		distlib \
 		pykg-config \
 		pyzmq \
