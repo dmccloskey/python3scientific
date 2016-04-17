@@ -22,6 +22,34 @@ RUN apt-get update && apt-get upgrade -y \
 		\
 		procps \
 	&& rm -rf /var/lib/apt/lists/*
+	
+# Install lapack and blas
+RUN apt-get update && apt-get upgrade -y \
+	&& apt-get install -y \
+	libatlas-base-dev \
+	#libjpeg62-dev \
+	libfreetype6 \
+	libpng12-dev \
+	libagg-dev \
+	pkg-config \
+	gfortran \
+	\
+	libopenblas-dev \
+	liblapack-dev \
+	libzmq-dev \	
+	\
+	libreadline-gplv2-dev \
+	libncursesw5-dev \
+	libssl-dev \
+	libsqlite3-dev \
+	tk-dev \
+	libgdbm-dev \
+	libc6-dev \
+	libbz2-dev \
+	libhdf5-dev \
+	libpq-dev \
+	--no-install-recommends \
+	&& rm -rf /var/lib/apt/lists/*
 
 # remove several traces of debian python
 RUN apt-get purge -y python.*
@@ -67,35 +95,6 @@ RUN cd /usr/local/bin \
 	&& ln -s pydoc3 pydoc \
 	&& ln -s python3 python \
 	&& ln -s python-config3 python-config
-
-# Install lapack and blas
-# Install python packages
-RUN apt-get update && apt-get upgrade -y \
-	&& apt-get install -y \
-	libatlas-base-dev \
-	#libjpeg62-dev \
-	libfreetype6 \
-	libpng12-dev \
-	libagg-dev \
-	pkg-config \
-	gfortran \
-	\
-	libopenblas-dev \
-	liblapack-dev \
-	libzmq-dev \	
-	\
-	libreadline-gplv2-dev \
-	libncursesw5-dev \
-	libssl-dev \
-	libsqlite3-dev \
-	tk-dev \
-	libgdbm-dev \
-	libc6-dev \
-	libbz2-dev \
-	libhdf5-dev \
-	libpq-dev \
-	--no-install-recommends \
-	&& rm -rf /var/lib/apt/lists/*
 	
 # Install python packages using pip3
 # setuptools, numpy and scipy must be installed prior to other installations
@@ -105,6 +104,7 @@ RUN pip3 install --no-cache-dir \
 		setuptools \
 		numpy \
 		scipy \
+		cython \
 	&&pip3 install --upgrade
 
 # Install python packages using pip3
@@ -113,6 +113,7 @@ RUN pip3 install --no-cache-dir \
 		urllib3 \
 		matplotlib \
 		ipython \
+		ipywidgets \
 		notebook \
 		pandas \
 		sympy \
