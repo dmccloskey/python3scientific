@@ -143,6 +143,11 @@ RUN pip3 install --no-cache-dir \
 		statsmodels \
 		pysam \
 		#htseq  \#not yet supported on python3
+		pytest \
+		sphinx \
+		Theano \
+		tensorflow \
+		tensorflow-gpu \
 	&&pip3 install --upgrade
 
 # Cleanup
