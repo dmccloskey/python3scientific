@@ -48,6 +48,7 @@ RUN apt-get update && apt-get upgrade -y \
 	libbz2-dev \
 	libhdf5-dev \
 	libpq-dev \
+	libcupti-dev \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
@@ -145,9 +146,6 @@ RUN pip3 install --no-cache-dir \
 		#htseq  \#not yet supported on python3
 		pytest \
 		sphinx \
-		Theano \
-		tensorflow \
-		tensorflow-gpu \
 	&&pip3 install --upgrade
 
 # Cleanup
