@@ -48,7 +48,7 @@ RUN apt-get update && apt-get upgrade -y \
 	libbz2-dev \
 	libhdf5-dev \
 	libpq-dev \
-	libcupti-dev \
+	#libcupti-dev \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
