@@ -145,7 +145,10 @@ RUN pip3 install --no-cache-dir \
 		pysam \
 		#htseq  \#not yet supported on python3
 		pytest \
+		pytest_benchmark \
 		sphinx \
+		swiglpk \
+		optlang \
 	&&pip3 install --upgrade
 
 # Cleanup
